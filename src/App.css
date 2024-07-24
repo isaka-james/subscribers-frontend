@@ -1,38 +1,186 @@
+/* src/App.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-input {
+  padding: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #9e1e33;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #771111;
+}
+
+.error-message {
+  color: red;
+}
+
+.channels-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.channel-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.channel-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.selected-channel {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 450px;
+  height: 300px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.subscribers {
+  font-weight: bold;
+  font-size: 55px;
+  opacity: 60%;
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.channel-thumbnail-large {
+  width: 40%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+h1{
+  color: red;
+  font-weight: 800;
+  opacity: 80%;
+}
+
+input{
+  padding: 12px 20px;
+}
+
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .search-input {
+    width: 70%;
+    margin-right: 5px;
+  }
+
+  .search-button {
+    padding: 8px 16px;
+  }
+
+  .channels-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .channel-card {
+    padding: 8px;
+  }
+
+  .channel-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .selected-channel {
+    margin-top: 15px;
+    min-width: 650px;
+    height: auto;
+  }
+
+  .subscribers {
+    font-size: 45px;
+  }
+
+  .channel-thumbnail-large {
+    width: 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* For Mobile Screens */
+@media (max-width: 480px) {
+  .search-input {
+    width: 100%;
+    margin-right: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .channels-container {
+    grid-template-columns: 1fr;
+  }
+
+  .channel-card {
+    padding: 10px;
+  }
+
+  .channel-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .selected-channel {
+    margin-top: 10px;
+  }
+
+  .subscribers {
+    font-size: 35px;
+  }
+
+  .channel-thumbnail-large {
+    width: 60%;
   }
 }
